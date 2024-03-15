@@ -1,6 +1,8 @@
 # **Pynt**
 **Pynt!** A dirt-simple Pygame etch-a-sketch
 
+![image](https://github.com/CassCodesThings/Pynt/assets/65094741/4459a504-2118-4c50-8283-0d5e0421cdbb)
+
 ### What is Pynt! ?
 **Pynt!** is an extremely simple etch-a-sketch program written using some of the most basic Pygame functionality possible. It is essentially something I threw together after an evening at the pub using the most advanced techniques I could possibly come up with after watching the first episode in a ten-part Pygame introduction, getting bored, and screwing around with image persistence.
 
