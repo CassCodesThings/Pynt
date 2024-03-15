@@ -102,6 +102,9 @@ while running:
 
     if keys[pygame.K_ESCAPE]:
         screen.fill((0,0,0))
+        x = 10
+        y = 10
+        
     #draw stuff
     if wantedcolor == red:
         pygame.draw.rect(screen, white, ((x + 1), (y + 1), width1, height1))
