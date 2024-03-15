@@ -29,7 +29,7 @@ Immediately terminate the program, exit the IDE, delete all Git files present, a
 
 (Editor's note: this circumstance is exceedingly common in installations of software claiming to be **Pynt!**, but not stylized as such. This is why it is important to ensure that **Pynt!** is correctly formatted in all text data.)
 
-###What can I do for **Pynt!** ?
+### What can I do for **Pynt!** ?
 if you want to help, try adding a system that can either control the cursor automatically or develop an API for recording and controlling cursor movements. I'll pay five bucks to the first person who does it well.
 
 Other than that, just do whatever you want with it. Add features, add colors, redesign the engine, make it interface with Quake in a cool and interesting way (I'll also pay five bucks for this), whatever you want. Except you gotta show me if you do something funny.
