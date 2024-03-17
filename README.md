@@ -10,7 +10,7 @@ im good at art i promise this is just a bad example
 **Pynt!** is an extremely simple drawing program written in Pygame. Starting as a simple etch-a-sketch program I wrote after an evening at the pub, it quickly evolved into a full-fledged doodle pad, with support for multiple colors and erasing.
 
 ### How do I install **Pynt!** ?
-download ``pynt v2.py`` and make sure you have the latest version of Pygame installed. If you don't, uhh, I think you can just use ``pip install pygame`` or something like that. Once that's done, open ``pynt v2.py`` in IDLE or whatever on Windows and if you're on Linux you should know what to do.
+download ``pynt v3.py`` and make sure you have the latest version of Pygame installed. If you don't, uhh, I think you can just use ``pip install pygame`` or something like that. Once that's done, open ``pynt v3.py`` in IDLE or whatever on Windows and if you're on Linux you should know what to do.
 
 ### What can **Pynt!** do?
 The problems facing the internet as we understand it require the most modern and capable tools we have at our disposal. Because of this, no expense has been spared in creating this software framework. After dozens of minutes of research and development, we've perfected a patent-pending unpatentable trichromatic display technology that scoffs at the concept of a "black and white only" color scheme. The industry has become stagnant and the people demanded innovation, and once I found a dictionary, we *knew* what had to be done. From this day on, monochromatic python drawing software is a relic of the past, something now only reserved to miscreants and luddites and other such misanthropic filth.
