@@ -1,6 +1,5 @@
 import pygame
 import random
-
 # --- pygame setup ---
 
 #sets surfaces and windows
@@ -20,9 +19,9 @@ pynt_logo = pygame.image.load('gfx/pynt_logo.png')
 sqicon_blank = pygame.image.load('gfx/sqicon_blank.png')
 sqicon_blank_pressed = pygame.image.load('gfx/sqicon_blank_pressed.png')
 pynt_icon = pygame.image.load('gfx/pynt_icon.png')
+mystery_icon = pygame.image.load('gfx/mystery.png')
 
 #set window icon and title
-
 pygame.display.set_icon(pynt_icon)
 pygame.display.set_caption('Pynt!')
 running = True
@@ -31,7 +30,7 @@ running = True
 canvas.fill((255,255,255,255))
 screen.fill((125, 125, 125, 255))
 
-#defines color palette
+#defines color palette as (r,g,b,a)
 white = (255, 255, 255, 255)
 red = (255, 0, 0, 255)
 yellow = (255, 201, 14, 255)
@@ -89,7 +88,7 @@ paintwhite = smallButton(5, 193, 32, 32)
 paintred = smallButton(5, 230, 32, 32)
 paintyellow = smallButton(5, 267, 32, 32)
 paintblue = smallButton(5, 304, 32, 32)
-
+paintmystery = smallButton(5, 341, 32, 32)
 # --- gameloop! ---
 #
 #This is where the program actually runs.
@@ -122,6 +121,8 @@ while running:
     screen.blit(sqicon_blank, (5, 230)) #red color button
     screen.blit(sqicon_blank, (5, 267)) #yellow color button
     screen.blit(sqicon_blank, (5, 304)) #blue color button
+    screen.blit(sqicon_blank, (5, 341)) #MyStErY color
+
 
     #This defines a bunch of keyboard shortcuts for things
     #for dot size
@@ -199,6 +200,12 @@ while running:
     if clickcheck(paintblue) == True:
         wantedcolor = blue
 
+    if clickcheck(paintmystery) == True:
+        if colorgen == False: #This basically makes it so that the mystery color doesn't regenerate after every frame, only when you first switch to Mystery
+            mysterycolor = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255), 255)
+            colorgen = True
+        wantedcolor = mysterycolor
+
     if pygame.mouse.get_pressed(num_buttons=3)[0]:
         #this offset is because the canvas surface is offset from the screen overall
         #and smaller than it. Without the 40-pixel offset, the brush dot would be put in the wrong place.
@@ -233,6 +240,8 @@ while running:
         screen.blit(sqicon_blank_pressed, (paintyellow.x, paintyellow.y)) #yellow color select
     if (wantedcolor == blue):
         screen.blit(sqicon_blank_pressed, (paintblue.x, paintblue.y)) #blue color select
+    if (wantedcolor == mysterycolor):
+            screen.blit(sqicon_blank_pressed, (paintmystery.x, paintmystery.y))
 
     #draw colors on the color buttons
     #(I really need to set this up differently)
@@ -243,10 +252,12 @@ while running:
     pygame.draw.rect(screen, red, (9, 234, 24, 24))
     pygame.draw.rect(screen, yellow, (9, 271, 24, 24))
     pygame.draw.rect(screen, blue, (9, 308, 24, 24))
+    screen.blit(mystery_icon, (5, 341)) #mystery question mark
 
     #draw brush outline for visibility
     pygame.draw.circle(screen, red, (mx, my), (size + 2), 2)
-    pygame.draw.circle(screen, white, (mx, my), (size + 1), 2)
+    pygame.draw.circle(screen, white, (mx, my), (size + 3), 2)
+    pygame.draw.circle(screen, wantedcolor, (mx, my), (size + 1), 3)
 
     #reset size to the intended one after using the eraser
     size = oldsize
