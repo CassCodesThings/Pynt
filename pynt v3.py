@@ -78,6 +78,9 @@ def clickcheck(button):
         elif ((mx > x and mx < x + width) and (my > y and my < y + height)):
             return False
 
+def effective_mouse_pos(mx: int, my: int):
+    return (mx - 42, my - 40)
+
         
 #Now let's set up some buttons to be used.
 brushsmall = smallButton(5, 45, 32, 32)
@@ -142,6 +145,10 @@ while running:
         dotcolor = wantedcolor
         #sets large
     #for dot color
+
+    if keys[pygame.K_LCTRL]:
+        wantedcolor = canvas.get_at(effective_mouse_pos(mx, my))
+
     if wantedcolor != mysterycolor:
         colorgen = False
 
@@ -209,13 +216,13 @@ while running:
     if pygame.mouse.get_pressed(num_buttons=3)[0]:
         #this offset is because the canvas surface is offset from the screen overall
         #and smaller than it. Without the 40-pixel offset, the brush dot would be put in the wrong place.
-        pygame.draw.circle(canvas, wantedcolor, (mx - 42, my - 40), (size))
+        pygame.draw.circle(canvas, wantedcolor, effective_mouse_pos(mx, my), (size))
 
     #makes a big eraser brush when you right click
     if pygame.mouse.get_pressed(num_buttons=3)[2]:
         oldsize = size
         size = 9 #has to juggle the brush size here so that it can make the brush big while erasing but return it to normal
-        pygame.draw.circle(canvas, white, (mx - 42, my - 40), (size))
+        pygame.draw.circle(canvas, white, effective_mouse_pos(mx, my), (size))
 
     #blits the canvas and whatnot to the screen
     screen.blit(canvas, (42, 40))
