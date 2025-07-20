@@ -6,7 +6,7 @@ import random
 pygame.init()
 canvas = pygame.Surface((640-84, 400))
 screen = pygame.display.set_mode((640,480))
-cursor = pygame.image.load('gfx\curs.png')
+cursor = pygame.image.load('gfx/curs.png')
 
 #loading up all of the UI GFX
 brush_sml = pygame.image.load('gfx/brush_small.png')
